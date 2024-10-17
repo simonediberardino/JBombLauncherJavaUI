@@ -1,5 +1,6 @@
 package utility
 
+import utility.Utility.isWindows
 import java.io.File
 import java.util.*
 
@@ -25,4 +26,12 @@ object Paths {
             "$userHome${File.separator}.config${File.separator}$appname${File.separator}PlayerData"
         }
     }
+
+    val installDirectory = if (isWindows()) {
+        File(System.getenv("ProgramFiles"), "JBomb")
+    } else {
+        File("/usr/local/bin/jbomb")
+    }
+
+    val jarPath = "/bin/JBomb.jar"
 }

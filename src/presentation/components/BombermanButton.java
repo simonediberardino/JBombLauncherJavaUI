@@ -25,7 +25,7 @@ public abstract class BombermanButton extends JButton {
     }
 
     public BombermanButton(String text) {
-        super(text);
+        super(" " + text + " ");
         setFocusPainted(false);
         setOpaque(false);
         setContentAreaFilled(false);

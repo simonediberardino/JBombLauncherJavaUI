@@ -1,4 +1,0 @@
-package tasks
-
-class JBombLauncher {
-}

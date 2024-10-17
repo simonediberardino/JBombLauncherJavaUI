@@ -1,18 +1,24 @@
 package tasks
 
+import data.DataInputOutput
+import kotlinx.coroutines.runBlocking
+import model.ExecutionStatus
 import org.apache.commons.io.FileUtils
+import usecases.GetLatestVersionUseCase
+import usecases.UseCase
+import utility.Paths
+import utility.Utility.isWindows
 import java.io.File
 import java.io.IOException
 import java.net.URL
 
-class JBombInstaller {
+class JBombInstaller : UseCase<ExecutionStatus> {
     private val repoUrlJBomb = "https://github.com/simonediberardino/BomberMan/releases/latest/download/JBomb.jar"
     private val filenameJBomb = "JBomb.jar"
     private lateinit var installDir: File
     private lateinit var installDirBin: File
 
     // Check if the OS is Windows
-    private fun isWindows(): Boolean = System.getProperty("os.name").lowercase().contains("win")
 
     // Ensure that the script is run with root privileges
     private fun checkRootPrivileges() {
@@ -45,8 +51,7 @@ class JBombInstaller {
         }
     }
 
-    // Main installation method
-    fun install(): Boolean {
+    override suspend fun invoke(): ExecutionStatus {
         println("======================================================================")
         println("                   JBomb Game Installer")
         println("This prompt will download and install the latest version of JBomb")
@@ -55,26 +60,24 @@ class JBombInstaller {
         println()
 
         // Set installation directories based on the operating system
-        installDir = if (isWindows()) {
-            File(System.getenv("ProgramFiles"), "JBomb")
-        } else {
-            File("/usr/local/bin/jbomb")
-        }
-
-        installDirBin = File(installDir, "bin")
+        installDirBin = File(Paths.installDirectory, "bin")
 
         // Download JBomb jar file
         val jBombFile = File(installDirBin, filenameJBomb)
         return try {
             checkRootPrivileges()
             createDirectories()
-
             downloadFile(repoUrlJBomb, jBombFile)
+            updateLatestVersion()
             // Create a symbolic link to the JBomb jar file on the desktop
             println("JBomb and its updater have been installed to the latest version.")
-            true
+            ExecutionStatus.DOWNLOADED
         } catch (exception: Exception) {
-            false
+            ExecutionStatus.DOWNLOADING_ERROR
         }
+    }
+
+    private suspend fun updateLatestVersion() {
+        DataInputOutput.version = GetLatestVersionUseCase().invoke()
     }
 }

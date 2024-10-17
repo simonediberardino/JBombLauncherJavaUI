@@ -11,6 +11,8 @@ import javax.imageio.ImageIO
  * A utility class containing helper methods for the game.
  */
 object Utility {
+    fun isWindows(): Boolean = System.getProperty("os.name").lowercase().contains("win")
+
     fun isValueInRange(value: Int, min: Int, max: Int): Boolean {
         return value in min..max
     }

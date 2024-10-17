@@ -45,4 +45,14 @@ object DataInputOutput {
         } catch (ex: Exception) {
             PropertiesDataObject()
         }
+
+    var version: String = ""
+        get() {
+            return playerDataObject.version
+        }
+        set(value) {
+            playerDataObject.version = value
+            updateStoredPlayerData()
+            field = value
+        }
 }
