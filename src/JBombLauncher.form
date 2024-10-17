@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="JBombLauncher">
+  <grid id="27dc6" binding="parentPanel" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <opaque value="false"/>
+    </properties>
+    <border type="line">
+      <color color="-16777216"/>
+    </border>
+    <children>
+      <grid id="737e4" binding="northPanel" custom-create="true" layout-manager="FlowLayout" hgap="15" vgap="15" flow-align="0">
+        <constraints border-constraint="North"/>
+        <properties>
+          <opaque value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="48f0" class="presentation.components.RedButton" binding="redButton2" custom-create="true" default-binding="true">
+            <constraints/>
+            <properties/>
+          </component>
+          <component id="97f86" class="presentation.components.YellowButton" binding="yellowButton1" custom-create="true" default-binding="true">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+      <grid id="60487" binding="southPanel" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="South"/>
+        <properties>
+          <background color="-16777216"/>
+          <opaque value="false"/>
+        </properties>
+        <border type="none">
+          <title-color color="-14042349"/>
+        </border>
+        <children>
+          <grid id="b9981" layout-manager="FlowLayout" hgap="5" vgap="15" flow-align="1">
+            <constraints border-constraint="North"/>
+            <properties>
+              <opaque value="false"/>
+            </properties>
+            <border type="none">
+              <color color="-16777216"/>
+            </border>
+            <children>
+              <component id="47874" class="javax.swing.JLabel" binding="downloadingContentLabel" custom-create="true">
+                <constraints/>
+                <properties>
+                  <background color="-1180161"/>
+                  <font name="Fira Code"/>
+                  <text value="Welcome to JBomb launcher!"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="30457" layout-manager="FlowLayout" hgap="5" vgap="15" flow-align="1">
+            <constraints border-constraint="South"/>
+            <properties>
+              <opaque value="false"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="2abab" class="presentation.components.RedButton" binding="redButton1" custom-create="true" default-binding="true">
+                <constraints/>
+                <properties>
+                  <margin top="0" left="0" bottom="0" right="0"/>
+                  <maximumSize width="100" height="30"/>
+                  <minimumSize width="100" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="49f53" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <background color="-1180161"/>
+              <foreground color="-1"/>
+              <preferredSize width="0" height="1"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+        </children>
+      </grid>
+      <grid id="c1ce5" binding="centerPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <opaque value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="be57c" class="javax.swing.JLabel" binding="imageBackgroundLabel">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

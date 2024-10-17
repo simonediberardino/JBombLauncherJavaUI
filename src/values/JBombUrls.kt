@@ -1,0 +1,4 @@
+package values
+
+class JBombUrls {
+}
