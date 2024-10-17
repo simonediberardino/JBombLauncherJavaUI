@@ -22,10 +22,6 @@
             <constraints/>
             <properties/>
           </component>
-          <component id="97f86" class="presentation.components.YellowButton" binding="yellowButton1" custom-create="true" default-binding="true">
-            <constraints/>
-            <properties/>
-          </component>
           <component id="7269a" class="presentation.components.YellowButton" binding="yellowButton2" custom-create="true" default-binding="true">
             <constraints/>
             <properties/>

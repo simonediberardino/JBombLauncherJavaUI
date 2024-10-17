@@ -58,7 +58,7 @@ public class JBombLauncher extends JFrame {
         setContentPane(parentPanel);
         setResizable(false);
         setUndecorated(true);
-        setSize(new Dimension(960, 520));
+        setSize(new Dimension(960, 487));
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -116,9 +116,6 @@ public class JBombLauncher extends JFrame {
         // Button to close the application
         redButton2 = new RedButton("X", Utility.INSTANCE.px(20));
         redButton2.addActionListener(e -> System.exit(0));
-
-        // Button for the launcher title
-        yellowButton1 = new YellowButton(Localization.getTranslation(Localization.LAUNCHER_TITLE), Utility.INSTANCE.px(20));
 
         // Button to open the "About" page
         yellowButton2 = new YellowButton(Localization.getTranslation(Localization.ABOUT), Utility.INSTANCE.px(20));

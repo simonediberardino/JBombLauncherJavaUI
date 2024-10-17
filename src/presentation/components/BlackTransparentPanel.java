@@ -17,8 +17,8 @@ public class BlackTransparentPanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g.create();
 
         // Set color with RGBA where A (alpha) is for transparency (0-255)
-        // For semi-transparent black: (0, 0, 0, 128)
-        g2d.setColor(new Color(0, 0, 0, 128));
+        // For semi-transparent black: (0, 0, 0, 60)
+        g2d.setColor(new Color(0, 0, 0, 80));
 
         // Fill the panel's background with the semi-transparent color
         g2d.fillRect(0, 0, getWidth(), getHeight());
