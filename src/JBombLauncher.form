@@ -42,7 +42,7 @@
           <title-color color="-14042349"/>
         </border>
         <children>
-          <grid id="b9981" layout-manager="FlowLayout" hgap="5" vgap="15" flow-align="1">
+          <grid id="b9981" layout-manager="FlowLayout" hgap="5" vgap="18" flow-align="1">
             <constraints border-constraint="North"/>
             <properties>
               <opaque value="false"/>
@@ -81,8 +81,9 @@
           <grid id="49f53" layout-manager="BorderLayout" hgap="0" vgap="0">
             <constraints border-constraint="Center"/>
             <properties>
-              <background color="-1180161"/>
-              <foreground color="-1"/>
+              <background color="-4210753"/>
+              <enabled value="true"/>
+              <foreground color="-4210753"/>
               <preferredSize width="0" height="1"/>
             </properties>
             <border type="none"/>

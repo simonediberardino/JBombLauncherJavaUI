@@ -30,7 +30,7 @@ public class Localization {
         en.put(DOWNLOADING_STATUS, "Downloading status");
         en.put(READY_TO_LAUNCH, "JBomb is ready to launch!");
         en.put(DOWNLOADED_SUCCESS, "Update downloaded successfully!");
-        en.put(DOWNLOADING, "Downloading the update...");
+        en.put(DOWNLOADING, "Downloading the update, do not interrupt...");
         en.put(DOWNLOADING_ERROR, "There was an error while downloading the update, retry!");
         en.put(ABOUT, "About");
         en.put(LAUNCHER_TITLE, "JBomb Launcher");
@@ -42,7 +42,7 @@ public class Localization {
         it.put(DOWNLOADING_STATUS, "Stato del download");
         it.put(READY_TO_LAUNCH, "JBomb è pronto per l'avvio!");
         it.put(DOWNLOADED_SUCCESS, "Aggiornamento scaricato con successo!");
-        it.put(DOWNLOADING, "Scaricamento dell'aggiornamento...");
+        it.put(DOWNLOADING, "Scaricamento dell'aggiornamento, non interrompere...");
         it.put(DOWNLOADING_ERROR, "Errore durante il download dell'aggiornamento, riprova!");
         it.put(ABOUT, "Informazioni");
         it.put(LAUNCHER_TITLE, "JBomb Launcher");
