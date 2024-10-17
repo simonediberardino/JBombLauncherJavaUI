@@ -1,7 +1,7 @@
 package data
 
 import utility.Paths.dataFile
-import utility.Paths.playerDataPath
+import utility.Paths.launcherData
 import java.io.*
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -17,7 +17,7 @@ object DataInputOutput {
     fun updateStoredPlayerData(serObj: PropertiesDataObject? = playerDataObject) {
         try {
             // Get the appropriate data folder path based on the OS
-            val dataFolderPath = playerDataPath
+            val dataFolderPath = launcherData
 
             // Ensure the directories exist
             val dataPath = Paths.get(dataFolderPath)
@@ -37,7 +37,7 @@ object DataInputOutput {
 
     private val storedPlayerData: PropertiesDataObject
         get() = try {
-            val fileIn = FileInputStream(playerDataPath + File.separator + dataFile)
+            val fileIn = FileInputStream(launcherData + File.separator + dataFile)
             val objectIn = ObjectInputStream(fileIn)
             val obj = objectIn.readObject() as PropertiesDataObject
             objectIn.close()

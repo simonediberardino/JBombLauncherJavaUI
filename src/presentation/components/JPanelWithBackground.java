@@ -1,16 +1,18 @@
 package presentation.components;
 
+import utility.Paths;
 import utility.Utility;
 
 import javax.swing.*;
 import java.awt.*;
+
 
 public class JPanelWithBackground extends JPanel {
   private Image backgroundImage;
 
   public JPanelWithBackground() {
     // Load the background image
-    backgroundImage = Utility.INSTANCE.loadImage("assets/images/background.jpg");
+    backgroundImage = Utility.INSTANCE.loadImage(Paths.INSTANCE.getBackgroundPath());
   }
 
   @Override

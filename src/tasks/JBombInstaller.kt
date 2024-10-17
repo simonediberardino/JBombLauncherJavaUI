@@ -15,7 +15,7 @@ import java.net.URL
 class JBombInstaller : UseCase<ExecutionStatus> {
     private val repoUrlJBomb = "https://github.com/simonediberardino/BomberMan/releases/latest/download/JBomb.jar"
     private val filenameJBomb = "JBomb.jar"
-    private lateinit var installDir: File
+    private val installDir: File = Paths.installDirectory
     private lateinit var installDirBin: File
 
     // Check if the OS is Windows
@@ -71,6 +71,7 @@ class JBombInstaller : UseCase<ExecutionStatus> {
             updateLatestVersion()
             ExecutionStatus.DOWNLOADED
         } catch (exception: Exception) {
+            println(exception.message)
             ExecutionStatus.DOWNLOADING_ERROR
         }
     }

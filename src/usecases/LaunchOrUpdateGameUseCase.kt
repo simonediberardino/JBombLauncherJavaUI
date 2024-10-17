@@ -22,6 +22,7 @@ class LaunchOrUpdateGameUseCase : UseCase<ExecutionStatus> {
 
             else -> {
                 println("JBomb is updated, version $latestVersionRepository")
+                JBombLaunchUseCase().invoke()
                 ExecutionStatus.READY_TO_LAUNCH
             }
         }

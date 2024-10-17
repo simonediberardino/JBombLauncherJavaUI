@@ -9,7 +9,7 @@ object Paths {
     val dataFile: String get() = "data"
 
     @JvmStatic
-    val playerDataPath: String = let {
+    val launcherData: String = let {
         val os = System.getProperty("os.name").lowercase(Locale.getDefault())
         val userHome = System.getProperty("user.home")
 
@@ -17,13 +17,13 @@ object Paths {
 
         if (os.contains("win")) {
             // Windows: Use AppData\Local
-            "${System.getenv("LOCALAPPDATA")}${File.separator}$appname${File.separator}PlayerData"
+            "${System.getenv("LOCALAPPDATA")}${File.separator}$appname${File.separator}LauncherData"
         } else if (os.contains("mac")) {
             // macOS: Use Library/Application Support
-            "$userHome${File.separator}Library${File.separator}Application Support${File.separator}$appname${File.separator}PlayerData"
+            "$userHome${File.separator}Library${File.separator}Application Support${File.separator}$appname${File.separator}LauncherData"
         } else {
             // Linux/Unix: Use .config
-            "$userHome${File.separator}.config${File.separator}$appname${File.separator}PlayerData"
+            "$userHome${File.separator}.config${File.separator}$appname${File.separator}LauncherData"
         }
     }
 
@@ -34,4 +34,10 @@ object Paths {
     }
 
     val jarPath = "/bin/JBomb.jar"
+
+    val images = "assets/images"
+    val backgroundPath = "$images/background.jpg"
+
+    @JvmStatic
+    val iconPath: String get() = "$images/frame_icon.png"
 }

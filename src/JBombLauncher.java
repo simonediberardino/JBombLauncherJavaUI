@@ -7,6 +7,7 @@ import presentation.components.YellowButton;
 import presentation.localization.Localization;
 import usecases.LaunchOrUpdateGameUseCase;
 import usecases.OpenBrowserUseCase;
+import utility.Paths;
 import utility.Utility;
 import values.Dimensions;
 import values.JBombUrls;
@@ -19,6 +20,7 @@ import java.util.concurrent.Executors;
 
 public class JBombLauncher extends JFrame {
     private static final int DRAG_AREA_HEIGHT = 50; // The height of the draggable area from the top
+    private ExecutionStatus executionStatus = ExecutionStatus.READY_TO_LAUNCH;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private JPanel parentPanel;
     private JPanel northPanel;
@@ -55,6 +57,7 @@ public class JBombLauncher extends JFrame {
 
     // Set up basic frame properties (size, location, etc.)
     private void initializeFrameSettings() {
+        setIconImage(Utility.INSTANCE.loadImage(Paths.getIconPath()));
         setContentPane(parentPanel);
         setResizable(false);
         setUndecorated(true);
@@ -134,6 +137,9 @@ public class JBombLauncher extends JFrame {
 
     // Handle launching the game in a background thread
     private void launchGame() {
+        if (executionStatus == ExecutionStatus.DOWNLOADING)
+            return;
+
         executor.submit(() -> {
             setDownloadStatus(ExecutionStatus.DOWNLOADING);
             ExecutionStatus result = new LaunchOrUpdateGameUseCase().invoke(true);
@@ -148,6 +154,14 @@ public class JBombLauncher extends JFrame {
 
     // Update the download status based on the result
     private void setDownloadStatus(ExecutionStatus status) {
+        executionStatus = status;
+
+        redButton1.setText(
+                status == ExecutionStatus.DOWNLOADING
+                        ? Localization.getTranslation(Localization.PLEASE_WAIT)
+                        : Localization.getTranslation(Localization.LAUNCH_GAME)
+        );
+
         switch (status) {
             case READY_TO_LAUNCH:
                 downloadingContentLabel.setText(Localization.getTranslation(Localization.READY_TO_LAUNCH));
@@ -156,7 +170,7 @@ public class JBombLauncher extends JFrame {
                 downloadingContentLabel.setText(Localization.getTranslation(Localization.DOWNLOADED_SUCCESS));
                 break;
             case DOWNLOADING:
-                downloadingContentLabel.setText(Localization.getTranslation(Localization.DOWNLOADING));
+                downloadingContentLabel.setText(Localization.getTranslation(Localization.DOWNLOADING_DESCRIPTION));
                 break;
             case DOWNLOADING_ERROR:
                 downloadingContentLabel.setText(Localization.getTranslation(Localization.DOWNLOADING_ERROR));

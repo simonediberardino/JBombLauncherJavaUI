@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="JBombLauncherJava:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/JBombLauncherJava_jar</output-path>
+  <artifact type="jar" name="JBombLauncherJava:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/JBombLauncherJava_jar2</output-path>
     <root id="archive" name="JBombLauncherJava.jar">
       <element id="module-output" name="JBombLauncherJava" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.0.21/kotlin-stdlib-2.0.21.jar" path-in-jar="/" />

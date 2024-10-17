@@ -58,6 +58,11 @@ public abstract class BombermanButton extends JButton {
         });
     }
 
+    @Override
+    public void setText(String text) {
+        super.setText(" " + text + " ");
+    }
+
     public abstract Color getBorderColor();
 
     public abstract Color getMouseHoverBackgroundColor();

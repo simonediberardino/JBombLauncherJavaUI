@@ -14,7 +14,8 @@ public class Localization {
     public static final String DOWNLOADING_STATUS = "downloading_status";
     public static final String READY_TO_LAUNCH = "ready_to_launch";
     public static final String DOWNLOADED_SUCCESS = "downloaded_success";
-    public static final String DOWNLOADING = "downloading";
+    public static final String DOWNLOADING_DESCRIPTION = "downloading_desc";
+    public static final String PLEASE_WAIT = "please_wait";
     public static final String DOWNLOADING_ERROR = "downloading_error";
     public static final String ABOUT = "about";
     public static final String LAUNCHER_TITLE = "launcher_title";
@@ -30,10 +31,11 @@ public class Localization {
         en.put(DOWNLOADING_STATUS, "Downloading status");
         en.put(READY_TO_LAUNCH, "JBomb is ready to launch!");
         en.put(DOWNLOADED_SUCCESS, "Update downloaded successfully!");
-        en.put(DOWNLOADING, "Downloading the update, do not interrupt...");
+        en.put(DOWNLOADING_DESCRIPTION, "Downloading the update, do not interrupt...");
         en.put(DOWNLOADING_ERROR, "There was an error while downloading the update, retry!");
-        en.put(ABOUT, "About");
+        en.put(ABOUT, "JBomb The Game");
         en.put(LAUNCHER_TITLE, "JBomb Launcher");
+        en.put(PLEASE_WAIT, "Please wait...");
 
         // Italian translations
         Map<String, String> it = new HashMap<>();
@@ -42,10 +44,11 @@ public class Localization {
         it.put(DOWNLOADING_STATUS, "Stato del download");
         it.put(READY_TO_LAUNCH, "JBomb è pronto per l'avvio!");
         it.put(DOWNLOADED_SUCCESS, "Aggiornamento scaricato con successo!");
-        it.put(DOWNLOADING, "Scaricamento dell'aggiornamento, non interrompere...");
+        it.put(DOWNLOADING_DESCRIPTION, "Scaricamento dell'aggiornamento, non interrompere...");
         it.put(DOWNLOADING_ERROR, "Errore durante il download dell'aggiornamento, riprova!");
-        it.put(ABOUT, "Informazioni");
+        it.put(ABOUT, "JBomb The Game");
         it.put(LAUNCHER_TITLE, "JBomb Launcher");
+        it.put(PLEASE_WAIT, "Attendere...");
 
         // Add translations to the map
         translations.put(LANGUAGE_EN, en);
