@@ -69,8 +69,6 @@ class JBombInstaller : UseCase<ExecutionStatus> {
             createDirectories()
             downloadFile(repoUrlJBomb, jBombFile)
             updateLatestVersion()
-            // Create a symbolic link to the JBomb jar file on the desktop
-            println("JBomb and its updater have been installed to the latest version.")
             ExecutionStatus.DOWNLOADED
         } catch (exception: Exception) {
             ExecutionStatus.DOWNLOADING_ERROR
