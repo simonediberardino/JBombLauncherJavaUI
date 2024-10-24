@@ -28,7 +28,7 @@ object Paths {
     }
 
     val installDirectory = if (isWindows()) {
-        File(System.getenv("%localappdata%"), "JBomb")
+        File(System.getenv("LOCALAPPDATA"), "JBomb")
     } else {
         File("~/bin/jbomb")
     }
